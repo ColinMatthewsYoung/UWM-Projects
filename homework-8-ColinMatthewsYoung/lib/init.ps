@@ -1,0 +1,20 @@
+% Definitions of basic postscript commands using more primitive operators
+/dup { 0 index } def
+/exch { 2 1 roll } def
+
+/ne { eq not } def
+/le { exch ge } def
+/lt { exch gt } def
+
+/if { { } ifelse } def
+
+/addxy { 
+  exch 
+  4 -1 roll add 
+  3 1 roll add
+} def
+
+/rmoveto { currentpoint addxy moveto } def
+/rlineto { currentpoint addxy lineto } def
+
+  

@@ -1,0 +1,164 @@
+%!
+% examples from various tutorials
+gsave
+newpath
+100 200 moveto
+200 250 lineto
+100 300 lineto
+closepath
+gsave
+0.5 setgray
+fill
+grestore
+4 setlinewidth
+0.75 setgray
+stroke
+
+grestore
+showpage
+gsave
+
+/csquare {
+   newpath
+   0 0 moveto
+   0 1 rlineto
+   1 0 rlineto
+   0 -1 rlineto
+   closepath
+   setrgbcolor
+   fill
+} def
+
+20 20 scale
+
+5 5 translate
+1 0 0 csquare
+
+1 0 translate
+0 1 0 csquare
+
+1 0 translate
+0 0 1 csquare
+
+grestore
+showpage
+gsave
+/Times-Roman findfont
+36 scalefont
+setfont
+newpath
+100 200 moveto
+(Example 3) show
+1 0.2 0.2 setrgbcolor
+100 200 moveto
+150 0 rlineto
+stroke
+
+grestore
+showpage
+gsave
+
+newpath
+100 100 moveto
+0 100 rlineto
+100 0 rlineto
+0 -100 rlineto
+-100 0 rlineto
+closepath
+gsave
+0.5 1 0.5 setrgbcolor
+fill
+grestore
+1 0 0 setrgbcolor
+4 setlinewidth
+stroke
+
+grestore
+showpage
+gsave
+
+/LINE {
+   newpath
+   0 0 moveto
+   100 0 lineto
+   stroke
+} def
+
+100 200 translate
+10 setlinewidth 0 setlinecap 0 setgray LINE
+1 setlinewidth 1 setgray LINE
+
+0 20 translate
+10 setlinewidth 1 setlinecap 0 setgray LINE
+1 setlinewidth 1 setgray LINE
+
+0 20 translate
+10 setlinewidth 2 setlinecap 0 setgray LINE
+1 setlinewidth 1 setgray LINE
+
+
+grestore
+showpage
+gsave
+
+/ANGLE {
+        newpath
+        100 0 moveto
+        0 0 lineto
+        100 50 lineto
+        stroke
+} def
+
+
+10 setlinewidth
+0 setlinejoin
+100 200 translate
+ANGLE
+
+1 setlinejoin
+0 70 translate
+ANGLE
+
+2 setlinejoin
+0 70 translate
+ANGLE
+
+grestore
+showpage
+gsave
+
+newpath 40 160 36 10 50 arc stroke                                   
+newpath 40 116 36 50 10 arc stroke
+newpath 40 42 moveto  40 42 36 10 50 arc stroke
+newpath 40 6 moveto 40 6 36 10 50 arc closepath stroke
+
+grestore                                   
+showpage
+gsave
+
+/closedpoint {1.5 0 360 arc gsave
+  0 setgray fill grestore stroke} def
+/openpoint {1.5 0 360 arc gsave
+  1 setgray fill grestore stroke} def
+ 
+5 5 translate
+% example 1
+newpath % draw gray lines
+0.6 setgray
+0 300 moveto 0 330 lineto
+72 300 moveto 42 300 lineto
+stroke
+% draw Bezier curve
+0 setgray
+newpath
+0 300 moveto
+0 330 42 300 72 300 curveto
+stroke
+% draw points
+0 setgray
+newpath
+0 300 closedpoint 72 300 closedpoint
+0 330 openpoint 42 300 openpoint
+
+grestore
+showpage
